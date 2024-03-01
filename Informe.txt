@@ -1,0 +1,26 @@
+Diferencias entre ECB y CBC
+
+ECB
+- Cada parte del texto plano se cifra por separado haciendo que partes iguales del texto plano se cifren de la misma forma. Esto puede introducir patrones en el texto cifrado que pueden ser explotados.
+- Se considera inseguro debido a que no se oculta la estructura del texto plano.
+- No hay propagacion de errores, si un bloque se corrompe, solo se corrompe ese bloque.
+- No utiliza IV.
+- Se recomineda solo para cifrar pequeñas cantidades de datos.
+
+CBC
+- Cada bloque de texto plano se combina con el bloque cifrado anterior antes de ser cifrado, lo que hace que partes iguales del texto plano se cifren de forma diferente.
+- Se considera seguro debido a que oculta la estructura del texto plano.
+- Propagacion de errores, si un bloque se corrompe, se corrompen todos los bloques siguientes.
+- Utiliza IV.
+- Se recomienda para cifrar grandes cantidades de datos.
+
+
+Solo fue posible descifrar la imagen con el modo ECB ya que con el modo CBC se necesitaba el IV para descifrar la imagen, al no tener este IV fue imposisble descifrar la imagen.
+
+
+PARTE 2
+
+Al realizar el encriptado con ECB es posible ver patrones en la imagen, esto se debe a la peculiaridad de este modo de encriptado. 
+Por otro lado, al realizar el encriptado con CBC no es posible ver patrones en la imagen, esto se debe a que este modo de encriptado oculta la estructura del texto plano, haciendo imposible reconocer los patrones de la imagen original
+
+Las imagenes encriptadas con ECB y CBC son 'tuxon_ecb.jpg' y 'tuxon_cbc.jpg' respectivamente.

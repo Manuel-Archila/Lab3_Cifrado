@@ -1,0 +1,58 @@
+{   
+    "receptor": {
+        "numero_documento": "06142307091063",
+        "nombre": "Obed Espinoza",
+        "correo": "obedaeg@gmail.com",
+        "nrc":"3123",
+        "descripcion_actividad": "VENTA AL POR MENOR DE OTROS PRODUCTOS EN COMERCIOS NO ESPECIALIZADOS",
+        "nombre_comercial": "Prueba de Receptor",
+        "telefono": "12345667",
+        "bien_titulo": "23",
+        "codigo_actividad": "45401",
+        "nit": "06142307091063",
+        "direccion": {
+            "departamento": "06",
+            "municipio": "14",
+            "complemento": "PROLG. ALAMEDA JUAN PABLO II PSJ. SAN JORGE, # L-1, SAN SALVADOR, SAN SALVADOR"
+        }
+    },
+    "documento_relacionado": [{
+        "fechaEmision": "2024-02-27",
+        "numeroDocumento": "06142307091063",
+        "tipoDocumento": "03",
+        "tipoGeneracion": 1
+    }],
+    "codigo_actividad":  "45401",
+    "tipo_documento":"NDE",
+    "moneda": "USD",
+    "detalles": [
+        {
+            "codigo": "2282252",
+            "descripcion": "SNICKERS KS DOBLE BARRA  1X6X24UX93.3G||24",
+            "cantidad": 24.0,
+            "precio_unitario": 1.15,
+            "tipo_item": 1,
+            "unidad_medida": 59,
+            "monto_descuento": 0.0,
+            "venta_no_sujeta": 0.0,
+            "venta_exenta": 0.0,
+            "venta_gravada": 27.6,
+            "tributos": ["20"],
+            "numero_documento": "06142307091063"
+        },
+        {
+            "codigo": "2284431",
+            "descripcion": "M&M LECHE/CHOC SHARING SIZE 1X6X24UX89G||24",
+            "cantidad": 24.0,
+            "precio_unitario": 1.15,
+            "tipo_item": 1,
+            "unidad_medida": 59,
+            "monto_descuento": 0.0,
+            "venta_no_sujeta": 0.0,
+            "venta_exenta": 0.0,
+            "venta_gravada": 27.6,
+            "tributos": ["20"],
+            "numero_documento": "06142307091063"
+        }
+    ]
+}

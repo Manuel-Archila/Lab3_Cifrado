@@ -99,18 +99,30 @@ def des3_decrypt(key, ciphertext):
     return plaintext_decrypted
 
 # Funcion que realiza el cifrado AES
-def aes_encrypt(key, plaintext):
+def aes_encrypt_ecb(key, plaintext):
     plaintext_padded = pad(plaintext, AES.block_size)
     cipher = AES.new(key, AES.MODE_ECB)
     ciphertext = cipher.encrypt(plaintext_padded)
     return ciphertext
 
 # Funcion que realiza el descifrado AES
-def aes_decrypt(key, ciphertext):
+def aes_decrypt_ecb(key, ciphertext):
     decipher = AES.new(key, AES.MODE_ECB)
     decrypted_padded = decipher.decrypt(ciphertext)
     plaintext_decrypted = unpad(decrypted_padded, AES.block_size)
     return plaintext_decrypted
+
+# Funcion que realiza el cifrado AES en modo CBC
+def aes_encrypt_cbc(key, iv, plaintext):
+    cipher = AES.new(key, AES.MODE_CBC, iv)
+    ciphertext = cipher.encrypt(pad(plaintext, AES.block_size))
+    return ciphertext
+
+# Funcion que realiza el descifrado AES en modo CBC
+def aes_decrypt_cbc(key, iv, ciphertext):
+    cipher = AES.new(key, AES.MODE_CBC, iv)
+    plaintext = unpad(cipher.decrypt(ciphertext), AES.block_size)
+    return plaintext
 
 def load_image(file_path):
     with Image.open(file_path) as im:
@@ -143,3 +155,17 @@ def decrypt_cbc(encrypted_data, key):
     cipher = AES.new(key, AES.MODE_CBC, iv)
     original_data = unpad(cipher.decrypt(encrypted_data[AES.block_size:]), AES.block_size)
     return original_data
+
+def read_key(file_path):
+    with open(file_path, 'rb') as file:
+        key = file.read()
+    return key
+
+def open_image(file_path):
+    with open(file_path, 'rb') as file:
+        data = file.read()
+    return data
+
+def new_image(data, file_path):
+    with open(file_path, 'wb') as file:
+        file.write(data)
